@@ -159,3 +159,13 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
+CREATE table users(
+    user_id INT NOT NULL AUTO_INCRIMENT PRIMARY KEY,
+    user_nom varchar(50) NOT NULL,
+    user_prenom varchar(50) NOT NULL,
+    user_mail varchar (100) NOT NULL,
+    user_login varchar(50) NOT NULL,
+    user_mdp varchar(50) NOT NULL,
+    user_inscription Date NOT NULL,
+    user_lastConnexion Date 
+)
