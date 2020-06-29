@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -9,6 +12,18 @@
 </head>
 <body>
     <div class='container'> 
+    <div class="row">
+   <div class="col-3">
+        <img src="../jarditou_photos//jarditou_logo.jpg" class="img-fluid rounded float-left " alt="logo">
+    </div>
+    <div class="col-3">
+    
+    </div>
+    <div class="col-6">
+      <img src="../jarditou_photos//promotion.jpg" class="img-fluid max-width: 100%  " alt="promotion">
+    </div>
+
+</div>
     <div class='menu'>
     <nav id='navbar' class='navbar navbar-expand-sm bg-dark navbar-dark'>
         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
@@ -30,13 +45,22 @@
     </nav>
     </div>
     <div class='row'>
-        <form role='form'   action='verif_connexion.php'  method='POST' class='needs-validation' novalidate>
+        <form role='form'   action='inscriptionValidation.php'  method='POST' class='needs-validation' novalidate>
         <div class='form-group row'>
                 <label for='prenom' class='col-sm-2 col-form-label'>Prénom</label>
                 <div class='col-sm-10'>
                     <input type='text' class='form-control' id='prenom' name='prenom'>
                     <small id='lastnameHelpBlock' class='form-text text-muted'>
-                    Votre prénom doit s'écrire seulement avec des lettres
+                    Votre prénom doit s'écrire seulement 30 lettres
+                    </small>
+                </div>
+            </div>
+            <div class='form-group row'>
+                <label for='nom' class='col-sm-2 col-form-label'>Nom</label>
+                <div class='col-sm-10'>
+                    <input type='nom' class='form-control' id='nom' name='nom'>
+                    <small id='lastnameHelpBlock' class='form-text text-muted'>
+                    Votre nom doit s'écrire seulement 30 lettres
                     </small>
                 </div>
             </div>
@@ -45,25 +69,17 @@
                 <div class='col-sm-10'>
                     <input type='email' class='form-control' id='mail' name='mail'>
                     <small id='lastnameHelpBlock' class='form-text text-muted'>
-                    Un email valide, svp!
+                    Un email valide
                     </small>
                 </div>
             </div>
             <div class='form-group row'>
-                <label for='mail' class='col-sm-2 col-form-label'>Email</label>
+                <label for='login' class='col-sm-2 col-form-label'>Login</label>
                 <div class='col-sm-10'>
-                    <input type='email' class='form-control' id='mail' name='mail'>
+                    <input type='login' class='form-control' id='login' name='login'>
                     <small id='lastnameHelpBlock' class='form-text text-muted'>
-                    Un email valide, svp!
-                    </small>
-                </div>
-            </div>
-            <div class='form-group row'>
-                <label for='mail' class='col-sm-2 col-form-label'>Email</label>
-                <div class='col-sm-10'>
-                    <input type='email' class='form-control' id='mail' name='mail'>
-                    <small id='lastnameHelpBlock' class='form-text text-muted'>
-                    Un email valide, svp!
+                    Votre login doit possèder au moins 6 caractères dont au moins une majuscule,une minuscule
+                    et un chiffre 
                     </small>
                 </div>
             </div>
@@ -77,6 +93,12 @@
                     </small>
                 </div>
             </div>
+            <div class='form-group row'>
+                <label for='password' class='col-sm-2 col-form-label'> Confirmer le mot de passe </label>
+                <div class='col-sm-10'>
+                    <input type='password' class='form-control' id='password1' name='password1'>
+                </div>
+            </div>
             
             <div class='row'>
             
@@ -85,11 +107,6 @@
             
             </div>
         </form>
-        <?php
-    if (isset($_GET["message"])&&($_GET["message"]==1)){
-        echo "<span style='color:ff0000'> Email invalide ou Login incorrect</span>";
-    }
-    ?>
     </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
