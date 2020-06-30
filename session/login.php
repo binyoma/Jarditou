@@ -10,7 +10,7 @@ session_start();
 </head>
 <body>
     <form action="verif_login.php" method="POST">
-    <p> veuillez saisir votr login et password <p>
+    <p> veuillez saisir votre login et password <p>
     <label>Login</label>
     <input type="mail" name="login"><br>
     <label>Mot de pass<label>
